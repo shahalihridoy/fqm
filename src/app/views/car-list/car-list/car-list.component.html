@@ -1,0 +1,17 @@
+<div fxLayout="row wrap" class="main-container">
+  <div class="card-holder" *ngFor="let car of carList | async" fxFlex="50" fxFlex.lt-sm="100">
+    <mat-card class="car-card" fxLayout="row " fxLayoutAlign.lt-sm="center center" fxLayoutAlign="start center"
+      fxLayout.lt-md="column" fxLayoutGap="24px">
+      <div class="car-icon" fxFlex="60" fxFlex.lt-md="100">
+        <img *ngIf="car?.EquipmentIcon" src="{{car?.EquipmentIcon}}" alt="car image">
+        <img style="width: 50%;" *ngIf="!car?.EquipmentIcon" src="../../../../assets/images/logo.png" alt="car image">
+      </div>
+      <div class="car-details" fxFfxFlex="39" fxFlex.lt-md="100" fxLayout="column" fxLayoutAlign.lt-md="start center">
+        <h3>Family: {{car?.EquipmentFamily}}</h3>
+        <h4>Model: {{car?.EquipmentModel}}</h4>
+        <h4>Nick: {{car?.EquipmentNick}}</h4>
+        <h4>Serial: {{car?.EquipmetSerial}}</h4>
+      </div>
+    </mat-card>
+  </div>
+</div>

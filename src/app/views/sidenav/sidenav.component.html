@@ -1,0 +1,27 @@
+<perfect-scrollbar class="ps" style="height: 100vh;" [config]="">
+  <div fxLayout="column" class="sidenav-container">
+    
+    <!-- close icon -->
+    <div class="close-button">
+      <button mat-icon-button color="warn" (click)="sidenav.toggle()">
+        <mat-icon class="mat-18">close</mat-icon>
+      </button>
+    </div>
+
+    <!-- logo with name -->
+    <div fxLayout="column" fxLayoutAlign="start center" class="logo-name">
+      <img src="./assets/images/logo.png" alt="small logo">
+      <h4>First Quantam Minerals</h4>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!-- navigation links -->
+    <div fxLayout="column" fxLayoutAlign="start" class="sidenav-link">
+      <a routerLink="./car-list" mat-button (click)="sidenav.toggle()">Home</a>
+      <a routerLink="./car-list" mat-button (click)="sidenav.toggle()">car list</a>
+      <a routerLink="./inspection-list" mat-button (click)="sidenav.toggle()">inspection list</a>
+      <a href="#" mat-button (click)="sidenav.toggle()">users</a>
+    </div>
+  </div>
+</perfect-scrollbar>

@@ -1,0 +1,35 @@
+.mobile-toolbar {
+  color: white;
+  padding-left: 8px;
+}
+
+.app-name {
+  margin-left: 8px;
+  letter-spacing: 1px;
+}
+
+.header-container {
+  width: 100%;
+
+  background: rgb(100, 27, 196);
+  background: -moz-linear-gradient(-45deg, rgba(100, 27, 196, 1) 0%, rgba(56, 125, 209, 1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(100, 27, 196, 1) 0%, rgba(56, 125, 209, 1) 100%);
+  background: linear-gradient(135deg, rgba(100, 27, 196, 1) 0%, rgba(56, 125, 209, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#641bc4', endColorstr='#387dd1',GradientType=1 );
+
+  text-align: center;
+
+  img {
+      width: 40%;
+      margin: 24px 0px;
+  }
+
+}
+
+.pc-nav-bar {
+    text-transform: uppercase;
+
+    a {
+        padding: 14px;
+    }
+}

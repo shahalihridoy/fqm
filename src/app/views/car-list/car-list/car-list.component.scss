@@ -1,0 +1,28 @@
+.main-container {
+    margin: 16px;
+
+    @media screen and (max-width: 600px) {
+        margin: 8px;
+    }
+  }
+
+  .card-holder {
+    .car-card {
+      img {
+        width: 100%;
+      }
+    }
+  
+    padding: 8px;
+  }
+
+  .car-icon {
+      text-align: center;
+  }
+
+  .car-details {
+      color: rgba($color: #000000, $alpha: 0.77);
+      h4 {
+        margin: 0px;
+      }
+  }

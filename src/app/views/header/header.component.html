@@ -1,0 +1,18 @@
+<!-- mobile toolbar -->
+<mat-toolbar fxHide.gt-xs color="primary" class="mobile-toolbar mat-elevation-z3">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="app-name">First Quantam Minerals</span>
+</mat-toolbar>
+
+<!-- header for large screent -->
+<div class="header-container" fxHide.lt-sm>
+    <img src="./assets/images/logo-fqm.png" alt="fqm big logo">
+    <mat-toolbar class="pc-nav-bar mat-elevation-z3" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <a routerLink="./car-list" mat-button>Home</a>
+        <a routerLink="./car-list" mat-button>car list</a>
+        <a routerLink="./inspection-list" mat-button>inspection list</a>
+        <a href="#" mat-button>users</a>
+    </mat-toolbar>
+</div>
