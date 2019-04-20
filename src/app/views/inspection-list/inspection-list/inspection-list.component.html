@@ -1,3 +1,29 @@
-<p>
-  inspection-list works!
-</p>
+<div class="main-container" fxLayout="column" fxLayoutGap="16px">
+  <mat-card fxLayout="column" *ngFor="let car of inspectionListObservable | async">
+
+    <!-- about activity -->
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+      <!-- car details -->
+      <div class="pb-16">
+        <img width="320px" *ngIf="car?.EquipmentIcon" src="{{car?.EquipmentIcon}}" alt="car image">
+        <img width="320px" *ngIf="!car?.EquipmentIcon" src="./assets/images/logo.png" alt="logo">
+      </div>
+      <div>
+        <p class="m-4 text-normal"><strong>Family:</strong> {{car?.EquipmentFamily}}</p>
+        <p class="m-4 text-normal"><strong>Model:</strong> {{car?.EquipmentModel}}</p>
+        <p class="m-4 text-normal"><strong>Nick:</strong> {{car?.EquipmentNick}}</p>
+      </div>
+
+      <!-- activity detailse -->
+      <div>
+        <p class="m-4 text-normal"><strong>Status:</strong> <span class="uppercase">{{car?.ActivityStatus}}</span></p>
+        <p class="m-4 text-normal"><strong>Type:</strong> {{car?.ActivityType}}</p>
+        <p class="m-4 text-normal"><strong>Inspection Key:</strong> {{car?.inspection_key}}</p>
+      </div>
+    </div>
+
+    <div style="text-align: right;">
+      <button mat-raised-button color="primary" [routerLink]="['/inspection-list',car?.inspection_key]" routerLinkActive="router-link-active" ><mat-icon class="mat-18">arrow_forward</mat-icon></button>
+    </div>
+  </mat-card>
+</div>

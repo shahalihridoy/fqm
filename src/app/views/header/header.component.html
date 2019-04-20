@@ -1,18 +1,41 @@
 <!-- mobile toolbar -->
-<mat-toolbar fxHide.gt-xs color="primary" class="mobile-toolbar mat-elevation-z3">
+<mat-toolbar fxLayoutAlign="space-between center" fxHide.gt-xs color="primary" class="mobile-toolbar mat-elevation-z3">
     <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
     </button>
     <span class="app-name">First Quantam Minerals</span>
+    <button mat-icon-button (click)="showSearchOption = !showSearchOption">
+        <mat-icon>search</mat-icon>
+    </button>
 </mat-toolbar>
 
+<div fxHide.gt-xs @slide *ngIf="showSearchOption" class="search-box-mobile mat-elevation-z2">
+    <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+    </button>
+    <input [formControl]="searchControl" type="text" placeholder="Search something" #serachTerm />
+</div>
+
+
+
 <!-- header for large screent -->
-<div class="header-container" fxHide.lt-sm>
+<div class="header-container" fxHide.lt-sm fxLayout="column">
     <img src="./assets/images/logo-fqm.png" alt="fqm big logo">
-    <mat-toolbar class="pc-nav-bar mat-elevation-z3" fxLayoutAlign="center center" fxLayoutGap="8px">
-        <a routerLink="./car-list" mat-button>Home</a>
-        <a routerLink="./car-list" mat-button>car list</a>
-        <a routerLink="./inspection-list" mat-button>inspection list</a>
-        <a href="#" mat-button>users</a>
-    </mat-toolbar>
+
+    <!-- search in pc version -->
+    <div class="search-box-pc mat-elevation-z2" fxFlex="1 1 0%">
+        <button mat-icon-button>
+            <mat-icon>search</mat-icon>
+        </button>
+        <input [formControl]="searchControl" type="text" placeholder="Search something" #serachTerm />
+    </div>
+
+    <div class="pc-nav-bar mat-elevation-z3" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <!-- <a routerLink="" routerLinkActive="active" mat-button>Home</a> -->
+        <a routerLink="/car-list" routerLinkActive="active" mat-button>car list</a>
+        <a routerLink="/inspection-list" routerLinkActive="active" mat-button>inspection list</a>
+        <a *ngIf="!(user | async)" routerLink="/sessions/signin" routerLinkActive="active" mat-button>sign in</a>
+        <a *ngIf="!(user | async)" routerLink="/sessions/signup" routerLinkActive="active" mat-button>sign up</a>
+        <a *ngIf="(user | async)" mat-button (click)="signout()">sign out</a>
+    </div>
 </div>

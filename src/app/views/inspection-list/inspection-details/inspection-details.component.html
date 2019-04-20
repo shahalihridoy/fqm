@@ -1,0 +1,188 @@
+<div *ngIf="(checkList | async) as checklist" fxLayout="column" class="p-16" fxLayoutGap="16px">
+
+  <mat-card>
+    <!-- checklist -->
+    <div fxLayout="row wrap" fxLayoutAlign="start center">
+
+      <!-- ACTUADORES DEL SISTEMA -->
+      <p fxFlex="30" fxFlex.lt-md="100" fxLayout="row" fxLayoutAlign="center center"><strong>ACTUADORES DEL
+          SISTEMA</strong></p>
+
+      <!-- check -->
+      <div fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
+        <div class="relative" *ngFor="let checkItem of checklist?.Checklist['ACTUADORES DEL SISTEMA']; let i=index">
+          <!-- checklist row -->
+          <div fxLayout="column">
+            <!-- name -->
+            <p class="my-8"><strong>Item: </strong> {{checkItem?.Item}}</p>
+            <!-- status and required -->
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="48px">
+              <p class="my-8"><strong>Status: </strong>{{checkItem?.Status}}</p>
+              <p class="my-8"><strong>Required: </strong><span class="uppercase">{{checkItem?.IsRequired}}</span></p>
+            </div>
+          </div>
+          <div *ngIf="i+1 != checklist?.Checklist['ACTUADORES DEL SISTEMA']?.length" class="py-8">
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+
+  
+  <mat-card>
+    <!-- checklist 2 -->
+    <div fxLayout="row wrap" fxLayoutAlign="start center">
+
+      <!-- ACTUADORES DEL SISTEMA -->
+      <p fxFlex="30" fxFlex.lt-md="100" fxLayout="row" fxLayoutAlign="center center"><strong>CARTUCHO DE
+          NITROGENO</strong></p>
+
+      <!-- check -->
+      <div fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
+        <div class="relative" *ngFor="let checkItem of checklist?.Checklist['CARTUCHO DE NITROGENO']; let i=index">
+          <!-- checklist row -->
+          <div fxLayout="column">
+            <!-- name -->
+            <p class="my-8"><strong>Item: </strong> {{checkItem?.Item}}</p>
+            <!-- status and required -->
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="48px">
+              <p class="my-8"><strong>Status: </strong>{{checkItem?.Status}}</p>
+              <p class="my-8"><strong>Required: </strong><span class="uppercase">{{checkItem?.IsRequired}}</span></p>
+            </div>
+          </div>
+          <div *ngIf="i+1 != checklist?.Checklist['CARTUCHO DE NITROGENO']?.length" class="py-8">
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+
+
+  <mat-card>
+
+    <!-- check list 3 -->
+    <div fxLayout="row wrap" fxLayoutAlign="start center">
+
+      <!-- ACTUADORES DEL SISTEMA -->
+      <p fxFlex="30" fxFlex.lt-md="100" fxLayout="row" fxLayoutAlign="center center"><strong>EXTINTORES
+          MANUALES</strong></p>
+
+      <!-- check -->
+      <div fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
+        <div class="relative" *ngFor="let checkItem of checklist?.Checklist['EXTINTORES MANUALES']; let i=index">
+          <!-- checklist row -->
+          <div fxLayout="column">
+            <!-- name -->
+            <p class="my-8"><strong>Item: </strong> {{checkItem?.Item}}</p>
+            <!-- status and required -->
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="48px">
+              <p class="my-8"><strong>Status: </strong>{{checkItem?.Status}}</p>
+              <p class="my-8"><strong>Required: </strong><span class="uppercase">{{checkItem?.IsRequired}}</span></p>
+            </div>
+          </div>
+          <div *ngIf="i+1 != checklist?.Checklist['EXTINTORES MANUALES']?.length" class="py-8">
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+
+
+  <mat-card>
+
+    <!-- check list 4 -->
+    <div fxLayout="row wrap" fxLayoutAlign="start center">
+
+      <!-- ACTUADORES DEL SISTEMA -->
+      <p fxFlex="30" fxFlex.lt-md="100" fxLayout="row" fxLayoutAlign="center center"><strong>GENERAL</strong></p>
+
+      <!-- check -->
+      <div fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
+        <div class="relative" *ngFor="let checkItem of checklist?.Checklist['GENERAL']; let i=index">
+          <!-- checklist row -->
+          <div fxLayout="column">
+            <!-- name -->
+            <p class="my-8"><strong>Item: </strong> {{checkItem?.Item}}</p>
+            <!-- status and required -->
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="48px">
+              <p class="my-8"><strong>Status: </strong>{{checkItem?.Status}}</p>
+              <p class="my-8"><strong>Required: </strong><span class="uppercase">{{checkItem?.IsRequired}}</span></p>
+            </div>
+          </div>
+          <div *ngIf="i+1 != checklist?.Checklist['GENERAL']?.length" class="py-8">
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+
+
+  <mat-card>
+
+    <!-- check list 5 -->
+    <div fxLayout="row wrap" fxLayoutAlign="start center">
+
+      <!-- ACTUADORES DEL SISTEMA -->
+      <p fxFlex="30" fxFlex.lt-md="100" fxLayout="row" fxLayoutAlign="center center"><strong>SISTEMA DE
+          DISTRIBUCION</strong></p>
+
+      <!-- check -->
+      <div fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
+        <div class="relative" *ngFor="let checkItem of checklist?.Checklist['SISTEMA DE DISTRIBUCION']; let i=index">
+          <!-- checklist row -->
+          <div fxLayout="column">
+            <!-- name -->
+            <p class="my-8"><strong>Item: </strong> {{checkItem?.Item}}</p>
+            <!-- status and required -->
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="48px">
+              <p class="my-8"><strong>Status: </strong>{{checkItem?.Status}}</p>
+              <p class="my-8"><strong>Required: </strong><span class="uppercase">{{checkItem?.IsRequired}}</span></p>
+            </div>
+          </div>
+          <div *ngIf="i+1 != checklist?.Checklist['SISTEMA DE DISTRIBUCION']?.length" class="py-8">
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+
+  <mat-card>
+    <!-- check list 5 -->
+    <div fxLayout="row wrap" fxLayoutAlign="start center">
+
+      <!-- ACTUADORES DEL SISTEMA -->
+      <p fxFlex="30" fxFlex.lt-md="100" fxLayout="row" fxLayoutAlign="center center"><strong>TANQUES DE AGENTE</strong>
+      </p>
+
+      <!-- check -->
+      <div fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
+        <div class="relative" *ngFor="let checkItem of checklist?.Checklist['TANQUES DE AGENTE']; let i=index">
+          <!-- checklist row -->
+          <div fxLayout="column">
+            <!-- name -->
+            <p class="my-8"><strong>Item: </strong> {{checkItem?.Item}}</p>
+            <!-- status and required -->
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="48px">
+              <p class="my-8"><strong>Status: </strong>{{checkItem?.Status}}</p>
+              <p class="my-8"><strong>Required: </strong><span class="uppercase">{{checkItem?.IsRequired}}</span></p>
+            </div>
+          </div>
+          <div *ngIf="i+1 != checklist?.Checklist['TANQUES DE AGENTE']?.length" class="py-8">
+            <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+</div>

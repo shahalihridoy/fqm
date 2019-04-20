@@ -18,10 +18,12 @@
 
     <!-- navigation links -->
     <div fxLayout="column" fxLayoutAlign="start" class="sidenav-link">
-      <a routerLink="./car-list" mat-button (click)="sidenav.toggle()">Home</a>
-      <a routerLink="./car-list" mat-button (click)="sidenav.toggle()">car list</a>
-      <a routerLink="./inspection-list" mat-button (click)="sidenav.toggle()">inspection list</a>
-      <a href="#" mat-button (click)="sidenav.toggle()">users</a>
+      <!-- <a routerLink="" routerLinkActive="active" mat-button (click)="sidenav.toggle()">Home</a> -->
+      <a routerLink="/car-list" routerLinkActive="active" mat-button (click)="sidenav.toggle()">car list</a>
+      <a routerLink="/inspection-list" routerLinkActive="active" mat-button (click)="sidenav.toggle()">inspection list</a>
+      <a *ngIf="!(user | async)" routerLink="/sessions/signup" routerLinkActive="active" mat-button (click)="sidenav.toggle()">Sign up</a>
+      <a *ngIf="!(user | async)" routerLink="/sessions/signin" routerLinkActive="active" mat-button (click)="sidenav.toggle()">sign in</a>
+      <a *ngIf="(user | async)" mat-button (click)="signout()">sign out</a>
     </div>
   </div>
 </perfect-scrollbar>

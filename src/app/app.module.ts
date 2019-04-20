@@ -11,10 +11,14 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
-import { MaterialModule } from './modules/material.module';
+import { MaterialModule } from './shared/modules/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { SidenavComponent } from './views/sidenav/sidenav.component';
 import { HeaderComponent } from './views/header/header.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomeComponent } from './views/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -24,7 +28,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   declarations: [
     AppComponent,
     SidenavComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    PerfectScrollbarModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireAuthModule
   ],
   providers: [
     {
